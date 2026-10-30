@@ -1,0 +1,535 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kopiers — Rasa Kopi, Cerita Kita</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            classicRed: '#A61919',
+            darkRed: '#7F1111',
+            lightRed: '#FDF2F2',
+            cream: '#FFFDFC'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream text-gray-800 font-sans">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <div class="text-4xl text-classicRed">☕</div>
+
+          <div>
+            <h1 class="font-serif text-2xl md:text-3xl font-bold text-classicRed">
+              Kopiers
+            </h1>
+            <p class="text-xs text-gray-500">
+              Rasa Kopi, Cerita Kita
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-10">
+
+          <a href="#home"
+             class="text-classicRed font-semibold border-b-2 border-classicRed pb-1">
+            Beranda
+          </a>
+
+          <a href="#produk"
+             class="text-gray-600 hover:text-classicRed transition">
+            Produk
+          </a>
+
+          <a href="#tentang"
+             class="text-gray-600 hover:text-classicRed transition">
+            Tentang Kami
+          </a>
+
+          <a href="#kontak"
+             class="text-gray-600 hover:text-classicRed transition">
+            Kontak
+          </a>
+
+        </div>
+
+        <!-- Login -->
+        <a href="#login"
+           class="hidden md:inline-flex items-center gap-2 bg-classicRed hover:bg-darkRed text-white px-6 py-3 rounded-lg font-semibold transition duration-300 shadow-sm">
+          <span>👤</span>
+          Login
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden text-2xl text-classicRed"
+          onclick="toggleMenu()">
+          ☰
+        </button>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden pb-6">
+
+        <div class="flex flex-col gap-4">
+
+          <a href="#home" class="text-classicRed font-semibold">
+            Beranda
+          </a>
+
+          <a href="#produk" class="text-gray-600">
+            Produk
+          </a>
+
+          <a href="#tentang" class="text-gray-600">
+            Tentang Kami
+          </a>
+
+          <a href="#kontak" class="text-gray-600">
+            Kontak
+          </a>
+
+          <a href="#login"
+             class="bg-classicRed text-white px-5 py-3 rounded-lg text-center font-semibold">
+            Login
+          </a>
+
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO SECTION ================= -->
+  <main id="home">
+
+    <section class="relative overflow-hidden">
+
+      <!-- Decorative Red Shape -->
+      <div class="absolute -right-40 -top-40 w-[500px] h-[500px]
+                  bg-classicRed rounded-full opacity-10">
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="min-h-[650px] grid lg:grid-cols-2 gap-12 items-center py-20">
+
+          <!-- Hero Text -->
+          <div class="relative z-10">
+
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-[2px] bg-classicRed"></div>
+
+              <span class="text-classicRed font-semibold tracking-[0.2em] text-sm uppercase">
+                Kopi Pilihan
+              </span>
+            </div>
+
+            <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl
+                       font-bold leading-tight text-darkRed">
+
+              Nikmatnya Kopi
+              <span class="block">
+                dalam Setiap
+              </span>
+              <span class="text-classicRed">
+                Seduhan
+              </span>
+
+            </h2>
+
+            <p class="mt-7 max-w-xl text-lg text-gray-600 leading-relaxed">
+              Kopiers menghadirkan kopi berkualitas tinggi dengan rasa
+              autentik dan aroma yang menggugah selera.
+              Temani setiap momen berharga Anda dengan Kopiers.
+            </p>
+
+
+            <!-- CTA -->
+            <div class="mt-9 flex flex-col sm:flex-row gap-4">
+
+              <a href="#beli"
+                 class="inline-flex items-center justify-center gap-2
+                        bg-classicRed hover:bg-darkRed
+                        text-white font-semibold
+                        px-7 py-4 rounded-xl
+                        transition duration-300
+                        shadow-lg shadow-red-900/20">
+
+                🛒
+                Beli Sekarang
+
+              </a>
+
+
+              <a href="#produk"
+                 class="inline-flex items-center justify-center gap-3
+                        border-2 border-classicRed
+                        text-classicRed
+                        hover:bg-classicRed hover:text-white
+                        font-semibold
+                        px-7 py-4 rounded-xl
+                        transition duration-300">
+
+                Lihat Produk
+                <span>→</span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Hero Product -->
+          <div class="relative flex justify-center items-center">
+
+            <!-- Red Circle -->
+            <div class="absolute w-[430px] h-[430px]
+                        bg-classicRed rounded-full
+                        opacity-10">
+            </div>
+
+            <!-- Product Card -->
+            <div class="relative w-full max-w-md">
+
+              <div class="bg-gradient-to-br from-red-700 to-red-950
+                          rounded-3xl p-10 shadow-2xl
+                          transform rotate-2">
+
+                <div class="border border-white/30
+                            rounded-2xl p-8
+                            text-center text-white">
+
+                  <div class="text-6xl mb-5">
+                    ☕
+                  </div>
+
+                  <h3 class="font-serif text-5xl font-bold">
+                    Kopiers
+                  </h3>
+
+                  <p class="mt-2 text-red-100 tracking-widest">
+                    RASA KOPI, CERITA KITA
+                  </p>
+
+                  <div class="my-10 h-px bg-white/30"></div>
+
+                  <p class="text-sm uppercase tracking-[0.3em]">
+                    Premium Coffee
+                  </p>
+
+                  <p class="mt-3 font-serif text-2xl">
+                    100% Kopi Pilihan
+                  </p>
+
+                  <div class="mt-8 flex justify-center gap-2 text-2xl">
+                    ● ● ● ● ●
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Coffee Beans -->
+              <div class="absolute -bottom-8 -left-8 text-6xl">
+                ☕
+              </div>
+
+              <div class="absolute -top-8 -right-5 text-5xl">
+                🌿
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCT SECTION ================= -->
+    <section id="produk" class="bg-lightRed py-20">
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+
+        <span class="text-classicRed font-semibold uppercase tracking-widest text-sm">
+          Produk Kami
+        </span>
+
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-darkRed mt-3">
+          Pilihan Kopi Terbaik
+        </h2>
+
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+          Nikmati pilihan kopi berkualitas yang diproses dengan penuh
+          perhatian untuk menghasilkan rasa terbaik.
+        </p>
+
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+
+          <!-- Product 1 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition">
+
+            <div class="h-48 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-7xl">☕</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-darkRed mt-6">
+              Kopiers Classic
+            </h3>
+
+            <p class="text-gray-500 mt-2">
+              Rasa seimbang dengan aroma yang khas.
+            </p>
+
+          </div>
+
+
+          <!-- Product 2 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition">
+
+            <div class="h-48 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-7xl">☕</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-darkRed mt-6">
+              Kopiers Premium
+            </h3>
+
+            <p class="text-gray-500 mt-2">
+              Kopi premium untuk pengalaman istimewa.
+            </p>
+
+          </div>
+
+
+          <!-- Product 3 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition">
+
+            <div class="h-48 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-7xl">☕</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-darkRed mt-6">
+              Kopiers Robusta
+            </h3>
+
+            <p class="text-gray-500 mt-2">
+              Karakter kuat dengan aftertaste yang nikmat.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="tentang" class="py-20 bg-white">
+
+      <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <span class="text-classicRed font-semibold uppercase tracking-widest text-sm">
+          Tentang Kopiers
+        </span>
+
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-darkRed mt-3">
+          Rasa Kopi, Cerita Kita
+        </h2>
+
+        <p class="mt-6 text-gray-600 leading-relaxed text-lg">
+          Kopiers hadir untuk membawa pengalaman menikmati kopi yang
+          sederhana namun berkesan. Kami memilih biji kopi terbaik,
+          mengolahnya dengan penuh perhatian, dan menghadirkannya
+          untuk menemani setiap cerita Anda.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="kontak" class="bg-darkRed text-white">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Brand -->
+        <div>
+
+          <div class="flex items-center gap-3">
+
+            <div class="text-4xl">
+              ☕
+            </div>
+
+            <div>
+              <h3 class="font-serif text-3xl font-bold">
+                Kopiers
+              </h3>
+
+              <p class="text-red-200 text-sm">
+                Rasa Kopi, Cerita Kita
+              </p>
+            </div>
+
+          </div>
+
+          <p class="mt-6 text-red-100 leading-relaxed max-w-sm">
+            Kopiers adalah brand kopi lokal yang menghadirkan cita rasa
+            terbaik untuk para penikmat kopi sejati.
+          </p>
+
+        </div>
+
+
+        <!-- Menu -->
+        <div>
+
+          <h4 class="font-serif text-xl font-bold mb-5">
+            Menu
+          </h4>
+
+          <ul class="space-y-3 text-red-100">
+
+            <li>
+              <a href="#home" class="hover:text-white transition">
+                Beranda
+              </a>
+            </li>
+
+            <li>
+              <a href="#produk" class="hover:text-white transition">
+                Produk
+              </a>
+            </li>
+
+            <li>
+              <a href="#tentang" class="hover:text-white transition">
+                Tentang Kami
+              </a>
+            </li>
+
+            <li>
+              <a href="#kontak" class="hover:text-white transition">
+                Kontak
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- Social -->
+        <div>
+
+          <h4 class="font-serif text-xl font-bold mb-5">
+            Ikuti Kami
+          </h4>
+
+          <div class="flex gap-4">
+
+            <a href="#"
+               class="w-11 h-11 rounded-full bg-white/10
+                      flex items-center justify-center
+                      hover:bg-white hover:text-darkRed
+                      transition">
+              Instagram
+            </a>
+
+            <a href="#"
+               class="w-11 h-11 rounded-full bg-white/10
+                      flex items-center justify-center
+                      hover:bg-white hover:text-darkRed
+                      transition">
+              FB
+            </a>
+
+            <a href="#"
+               class="w-11 h-11 rounded-full bg-white/10
+                      flex items-center justify-center
+                      hover:bg-white hover:text-darkRed
+                      transition">
+              YT
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Copyright -->
+      <div class="border-t border-white/20 mt-12 pt-8 text-center">
+
+        <p class="text-red-200 text-sm">
+          © 2026 Kopiers. Semua hak dilindungi.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+
+      menu.classList.toggle('hidden');
+    }
+
+  </script>
+
+</body>
+</html>
+```
